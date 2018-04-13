@@ -1,0 +1,66 @@
+{
+  "name": "ndjson-generate-schema",
+  "description": "Effortlessly convert your NDJSON data to a JSON Schema.",
+  "license": "ISC",
+  "author": "Buster Collings <busterc@gmail.com> (https://about.me/buster)",
+  "repository": "busterc/ndjson-generate-schema",
+  "version": "0.0.0",
+  "main": "lib/index.js",
+  "bin": "lib/cli.js",
+  "files": ["lib"],
+  "scripts": {
+    "precommit": "lint-staged",
+    "prepublishOnly": "lec lib/cli.js -c LF && nsp check",
+    "pretest": "eslint .",
+    "test": "jest --coverage"
+  },
+  "dependencies": {
+    "fs-ndjson": "^1.1.0",
+    "generate-schema": "^2.6.0",
+    "meow": "^3.7.0"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-xo": "^0.20.1",
+    "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "husky": "^0.14.3",
+    "jest": "^22.0.6",
+    "lec": "^1.0.1",
+    "lint-staged": "^7.0.4",
+    "nsp": "^3.2.1",
+    "prettier": "^1.12.0",
+    "prettier-package-json": "^1.5.1"
+  },
+  "keywords": ["json", "json-schema", "jsonschema", "ndjson", "schema"],
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "eslintConfig": {
+    "extends": ["xo", "prettier"],
+    "env": {
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true,
+          "printWidth": 90
+        }
+      ]
+    },
+    "plugins": ["prettier", "json"]
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "lint-staged": {
+    "*.js": ["eslint --fix", "git add"],
+    "*.json": ["prettier --write", "git add"],
+    "package.json": ["prettier-package-json --write", "git add"]
+  }
+}
