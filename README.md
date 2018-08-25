@@ -1,5 +1,7 @@
 # ndjson-generate-schema [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/busterc/ndjson-generate-schema.svg)](https://greenkeeper.io/)
+
 > Effortlessly convert your NDJSON data to a JSON Schema.
 
 * Powered by: [`generate-schema`](https://github.com/nijikokun/generate-schema)
